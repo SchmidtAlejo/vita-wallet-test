@@ -75,7 +75,7 @@ export default function FirstPart({
   const [currencyToBuyActive, setCurrencyToBuyActive] =
     useState<CurrencyOption>(options2[1]);
 
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState<string | number>("");
   const [filteredOptions, setFilteredOptions] =
     useState<CurrencyOption[]>(options2);
 
@@ -87,7 +87,7 @@ export default function FirstPart({
         exchangeRates,
         currencyExchangeActive.targetCurrency,
         currencyToBuyActive.targetCurrency,
-        amount
+        +amount
       )
     );
   }, [currencyExchangeActive, amount, currencyToBuyActive]);
@@ -104,7 +104,7 @@ export default function FirstPart({
 
   const handleNext = () => {
     setBody({
-      amount_sent: amount as number,
+      amount_sent: amount,
       currency_sent: currencyExchangeActive.targetCurrency,
       currency_received: currencyToBuyActive.targetCurrency,
     });
@@ -135,10 +135,11 @@ export default function FirstPart({
             <div style={{ position: "relative" }}>
               <input
                 type="number"
+                inputMode="numeric"
                 name="currencyExchange"
+                onKeyDown={(e) => e.key === "e" && e.preventDefault()}
                 value={amount}
                 onChange={(e) => setAmount(+e.target.value)}
-                min={0}
                 className="input-price"
               />
               <div style={{ position: "absolute", top: "16px", left: "16px" }}>

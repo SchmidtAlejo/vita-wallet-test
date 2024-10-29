@@ -12,7 +12,7 @@ export default function Dashboard() {
   useEffect(() => {
     getHistory(getCredentials())
       .then((res) => setHistory(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, []);
 
   return (

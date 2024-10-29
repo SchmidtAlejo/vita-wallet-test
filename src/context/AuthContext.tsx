@@ -37,14 +37,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   };
 
   const updateProfile = (credentials: credentials) => {
-    getProfile(credentials)
-      .then((res) => {
+    getProfile(credentials).then((res) => {
+      if (res) {
         setAuthData(credentials);
         setProfile(res);
-      })
-      .catch(() => {
+      } else {
         clearAuthData();
-      });
+      }
+    });
   };
 
   useEffect(() => {

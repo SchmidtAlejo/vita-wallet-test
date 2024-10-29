@@ -26,7 +26,7 @@ export type CurrencyOption = {
 export type ExchangePost = {
   currency_sent: string;
   currency_received: string;
-  amount_sent: number;
+  amount_sent: string | number;
 };
 
 export type optionsOfCurrencyString = "usd" | "btc" | "usdt" | "usdc";

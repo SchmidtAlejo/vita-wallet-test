@@ -11,8 +11,8 @@ import { useAuth } from "../../context/AuthContext";
 
 export default function LoginForm() {
   const [userForm, setUserForm] = useState<loginRequest>({
-    email: "prospecto@vitawallet.io",
-    password: "Vita.1212",
+    email: "",
+    password: "",
   });
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 

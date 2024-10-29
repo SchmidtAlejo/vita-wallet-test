@@ -11,7 +11,7 @@ export default function Exchange() {
   const [isInFirstPart, setIsInFirstPart] = useState(true);
   const [amountExit, setAmountExit] = useState(0);
   const [body, setBody] = useState<ExchangePost>({
-    amount_sent: 0,
+    amount_sent: "",
     currency_sent: "",
     currency_received: "",
   });
@@ -31,7 +31,7 @@ export default function Exchange() {
 
     getProfile(getCredentials())
       .then((res) => setProfile(res))
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }, []);
 
   return (

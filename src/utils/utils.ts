@@ -26,7 +26,6 @@ export const calculateExchangeAmount = (
   }
 
   const rate = data.prices[fromCurrency][toCurrency];
-  console.log(rate);
 
   return amount * rate;
 };

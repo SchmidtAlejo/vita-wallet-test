@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# Sistema de Intercambios - Vita Wallet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de sistema de intercambios desarrollada en React, empleando React Context para gestionar el estado global, basada en el diseño proporcionado por Vita Wallet y las instrucciones incluidas en la prueba técnica.
 
-Currently, two official plugins are available:
+## Tabla de Contenidos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. [Características](#características)
+2. [Requisitos Previos](#requisitos-previos)
+3. [Instalación](#instalación)
+4. [Configuración](#configuración)
+5. [Ejecución](#ejecución)
+6. [Estructura del Proyecto](#estructura-del-proyecto)
+7. [Pruebas](#pruebas)
+8. [Endpoints Utilizados](#endpoints-utilizados)
+9. [Observaciones](#observaciones)
 
-## Expanding the ESLint configuration
+## Características
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Inicio de sesión**: Autenticación con credenciales provistas, gestionando la sesión de usuario.
+- **Visualización de balance**: Pantalla principal que muestra el balance del usuario, transacciones recientes e información personal.
+- **Intercambio de activos**: Realiza intercambios, validando balances y tasas de cambio actuales.
+- **Actualización periódica**: Llama a los endpoints de precios de manera regular para garantizar datos de intercambio precisos.
 
-- Configure the top-level `parserOptions` property like this:
+## Requisitos Previos
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js
+- npm
+- React
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/SchmidtAlejo/vita-wallet-test
+   cd vita-wallet
+   npm install
+   ```
+
+## Configuración
+
+1. Crea un archivo `.env` en la raíz del proyecto y agrega las variables necesarias, tales como la URL base de la API y cualquier clave requerida.
+2. Configuración de variables de entorno:
+   ```bash
+   VITE_APP_NAME = ANGIE
+   VITE_API_URL= https://api.qa.vitawallet.io/api
+   ```
+
+## Ejecución
+
+Para iniciar la aplicación en desarrollo:
+
+```bash
+    npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Para iniciar la compilación de estilos:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+    npm run sass:watch
 ```
+
+## Endpoints Utilizados
+
+1. Inicio de sesión: `/api/auth/sign_in`
+2. Perfil de usuario: `/api/profile`
+3. Precios de criptomonedas: `/api/users/get_crypto_multi_prices`
+4. Transacciones del usuario: `/api/transactions`
+5. Intercambio de activos: `/api/transactions/exchange`
+
+## Observaciones
+
+- La autenticación se maneja con las credenciales proporcionadas.
+- La aplicación asegura que los precios estén actualizados antes de cada transacción de intercambio.
+- El correo electrónico del usuario es: `prospecto@vitawallet.io`
+- la contraseña del usuario es: `Vita.1212`
