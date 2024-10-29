@@ -30,7 +30,7 @@ export const login = async (
     return {
       accessToken: response.headers.get("access-token")!,
       client: response.headers.get("client")!,
-      expiry: +response.headers.get("expiry")!,
+      expiry: response.headers.get("expiry")!,
       uid: result.data.attributes.email,
     };
   } catch (error) {

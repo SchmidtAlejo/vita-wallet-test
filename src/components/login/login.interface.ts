@@ -7,5 +7,5 @@ export interface loginResponse {
   accessToken: string;
   uid: string;
   client: string;
-  expiry: number;
+  expiry: string;
 }
