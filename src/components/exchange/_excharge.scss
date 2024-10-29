@@ -26,11 +26,21 @@
     &__currency {
       display: flex;
       gap: 16px;
-      appearance: none;
     }
 
     input {
       width: 387px;
+    }
+
+    input[type="number"] {
+      appearance: none;
+      -moz-appearance: textfield;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 
