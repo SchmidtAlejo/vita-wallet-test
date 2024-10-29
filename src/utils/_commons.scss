@@ -1,0 +1,98 @@
+@use "../utils" as *;
+
+* {
+  margin: 0;
+  text-align: left;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  @include font(16px, 400, 22px, $black);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.title {
+  @include font(48px, 600, 66px, $black);
+}
+
+.subtitle {
+  @include font(28px, 600, 38px, $black);
+}
+
+.subtitle2semiBold {
+  @include font(24px, 600, 32px, $black);
+}
+
+.subtitle2 {
+  @include font(24px, 400, 32px, $black);
+}
+
+.caption {
+  @include font(14px, 400, 19px, $black);
+}
+
+.caption2 {
+  @include font(12px, 400, 16px, $black);
+}
+
+.others {
+  @include font(16px, 600, 22px, $black);
+}
+
+button {
+  @include font(16px, 600, 22px, $black);
+  border: none;
+  border-radius: 6px;
+  padding: 16px 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.button-solid {
+  color: $white;
+  background: $blue-gradient;
+}
+
+.button-outline {
+  color: var(--blue1);
+  background-color: $white;
+  border: 1px solid $blue1;
+}
+
+.button-disable {
+  color: $white;
+  background-color: $gray2;
+  cursor: default;
+}
+
+input {
+  @include font(16px, 400, 22px, $black);
+  border-radius: 6px;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid $gray1;
+  &::placeholder {
+    color: $gray1;
+  }
+  &:focus {
+    background-color: $white;
+    border: 1px solid $blue1;
+  }
+}
+
+.input-price {
+  padding-left: 48px;
+}
+
+.container {
+  margin: 0 120px;
+}

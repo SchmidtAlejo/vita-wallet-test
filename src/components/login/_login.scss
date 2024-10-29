@@ -1,0 +1,42 @@
+@use "../../utils" as *;
+
+.login {
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    h1 {
+      margin: auto;
+      margin-top: 120px;
+    }
+  }
+
+  form {
+    margin-top: 129px;
+    width: 387px;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+
+    a {
+      text-decoration: none;
+      text-align: right;
+    }
+
+    button {
+      margin-top: 102px;
+    }
+  }
+
+  &__hero {
+    margin-top: 274px;
+    max-width: 662px;
+    width: 100%;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}

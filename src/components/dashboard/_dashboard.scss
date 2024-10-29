@@ -1,0 +1,97 @@
+@use "../../utils" as *;
+
+.dashboard {
+  width: calc(100vw - 372px);
+  height: 100vh;
+  overflow: hidden;
+
+  .container {
+    margin-top: 76px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 12px;
+
+    img {
+      width: 46px;
+      height: 46px;
+    }
+
+    span {
+      background: $blue-gradient;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
+
+  &__balances {
+    margin-top: 76px;
+
+    ul {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: space-between;
+
+      li {
+        width: 100%;
+        background-color: $gray3;
+        border: 2px solid $gray2;
+        padding: 24px;
+        border-radius: 6px;
+        div {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        p {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  &__history {
+    margin-top: 56px;
+
+    ul {
+      padding-top: 12px;
+      overflow: auto;
+      height: calc(100vh - 472px);
+
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        border-bottom: 1px solid $gray2;
+
+        div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 12px;
+        }
+      }
+    }
+
+    &__amount {
+      font-weight: 600;
+    }
+
+    .blue {
+      color: $blue1;
+    }
+
+    .red {
+      color: $red;
+    }
+  }
+}
